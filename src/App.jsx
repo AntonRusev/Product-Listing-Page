@@ -1,9 +1,13 @@
 import './App.css';
+import { ProductList } from './components/ProductList/ProductList';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
     return (
         <>
-            <h1>Product Listing Page</h1>
+            <ProductProvider>
+                <ProductList />
+            </ProductProvider>
         </>
     );
 };
