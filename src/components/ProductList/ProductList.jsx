@@ -13,7 +13,7 @@ export const ProductList = () => {
                 <p>There are no products to show.</p>
                 :
                 <ul>
-                    {categoryData.map((p) => <ProductCard key={p.index} {...p} />)}
+                    {categoryData.map((p) => <ProductCard key={p.id} {...p} />)}
                 </ul>
             }
         </section>

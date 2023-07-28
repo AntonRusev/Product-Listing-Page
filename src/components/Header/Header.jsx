@@ -7,7 +7,7 @@ export const Header = () => {
 
     return (
         <header>
-            <h1>Apparel Superstore</h1>
+            <h1>Apparel Averagestore</h1>
             <nav>
                 <ul>
                     {/* Generating a button for every possible category */}
