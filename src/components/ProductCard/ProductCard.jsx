@@ -1,19 +1,21 @@
 export const ProductCard = ({
-    name,
+    title,
     image,
     description,
     price,
     discountPercentage,
-    rating
+    rating,
+    filters
 }) => {
     return (
         <li>
-            <p>{name}</p>
+            <p>Title: {title}</p>
             <img src={image} alt="" />
-            <p>{description}</p>
-            <p>{price}</p>
-            <p>{discountPercentage}</p>
-            <p>{rating.rate} / {rating.count}</p>
+            <p>Description: {description}</p>
+            <p>Price: ${price}</p>
+            <p>Sale -%: {discountPercentage}</p>
+            <p>Stars: {rating.rate} / Reviews: {rating.count}</p>
+            <p>Filters: {filters.product}, {filters.gender}, {filters.colors}</p>
         </li>
     );
 };

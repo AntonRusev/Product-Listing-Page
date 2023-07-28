@@ -1,25 +1,43 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-import { clothingData, footwearData } from '../assets/data';
+import { productData } from '../assets/data';
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({
     children,
 }) => {
+    const [categories, setCategories] = useState([]);
+    const [currentCategory, setCurrentCategory] = useState('initial');
     const [categoryData, setCategoryData] = useState([]);
-    const [currentCategory, setCurrentCategory] = useState('clothing')
 
+    // Setting up all possible categories
     useEffect(() => {
-        if (currentCategory === 'clothing' && clothingData) {
-            setCategoryData(clothingData);
-        } else if (currentCategory === 'footwear' && footwearData) {
-            setCategoryData(footwearData);
+        setCategories(Object.keys(productData));
+    }, []);
+
+    // Setting up a default category upon initial render of the page
+    useEffect(() => {
+        if (currentCategory === 'initial' && categories.length > 0) {
+            setCurrentCategory(categories[0]);
+
         };
+    }, [categories]);
+
+    // Populating data for the current category only
+    useEffect(() => {
+        setCategoryData(productData[currentCategory]);
     }, [currentCategory]);
+
+    const onCategoryChange = (category) => {
+        setCurrentCategory(category);
+    };
 
 
     const productContextValue = {
+        onCategoryChange,
+        categories,
+        currentCategory,
         categoryData
     };
 
