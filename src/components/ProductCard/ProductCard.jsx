@@ -5,7 +5,7 @@ export const ProductCard = ({
     price,
     discountPercentage,
     rating,
-    filters
+    color
 }) => {
     return (
         <li>
@@ -15,7 +15,7 @@ export const ProductCard = ({
             <p>Price: ${price}</p>
             <p>Sale -%: {discountPercentage}</p>
             <p>Stars: {rating.rate} / Reviews: {rating.count}</p>
-            <p>Filters: {filters.product}, {filters.gender}, {filters.colors}</p>
+            <p>Color: {color}</p>
         </li>
     );
 };

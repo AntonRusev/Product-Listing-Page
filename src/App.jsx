@@ -1,8 +1,10 @@
-import './App.css';
+import { FilterProducts } from './components/FilterProducts/FilterProducts';
 import { Header } from './components/Header/Header';
 import { ProductList } from './components/ProductList/ProductList';
 import { SortProducts } from './components/SortProducts/SortProducts';
 import { ProductProvider } from './context/ProductContext';
+
+import './App.css';
 
 function App() {
     return (
@@ -10,6 +12,7 @@ function App() {
             <ProductProvider>
                 <Header />
                 <SortProducts />
+                <FilterProducts />
                 <ProductList />
             </ProductProvider>
         </>

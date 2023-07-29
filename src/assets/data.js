@@ -12,17 +12,7 @@ export const productData = {
                 "rate": 4.44,
                 "count": 67
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "brown",
-                ],
-            },
+            "color": "brown",
         },
         {
             "id": 2,
@@ -36,17 +26,7 @@ export const productData = {
                 "rate": 3.91,
                 "count": 17
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "brown",
-                ],
-            },
+            "color": "brown",
         },
         {
             "id": 3,
@@ -60,17 +40,7 @@ export const productData = {
                 "rate": 4.20,
                 "count": 69
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "brown",
-                ],
-            },
+            "color": "brown",
         },
         {
             "id": 4,
@@ -84,18 +54,7 @@ export const productData = {
                 "rate": 4.68,
                 "count": 212
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 5,
@@ -109,18 +68,7 @@ export const productData = {
                 "rate": 4.15,
                 "count": 117
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                    "women",
-                ],
-                "colors": [
-                    "red",
-                ],
-            },
+            "color": "red",
         },
         {
             "id": 6,
@@ -134,17 +82,7 @@ export const productData = {
                 "rate": 3.78,
                 "count": 77
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "red",
-                ],
-            },
+            "color": "red",
         },
         {
             "id": 7,
@@ -158,17 +96,7 @@ export const productData = {
                 "rate": 4.66,
                 "count": 12
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 8,
@@ -182,17 +110,7 @@ export const productData = {
                 "rate": 4.18,
                 "count": 133
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "pink",
-                ],
-            },
+            "color": "pink",
         },
         {
             "id": 9,
@@ -206,17 +124,7 @@ export const productData = {
                 "rate": 4.77,
                 "count": 104
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 10,
@@ -230,17 +138,7 @@ export const productData = {
                 "rate": 4.83,
                 "count": 157
             },
-            "filters": {
-                "product": [
-                    "jacket",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "red",
-                ],
-            },
+            "color": "red",
         },
         {
             "id": 11,
@@ -254,17 +152,7 @@ export const productData = {
                 "rate": 4.33,
                 "count": 166
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "brown",
-                ],
-            },
+            "color": "brown",
         },
         {
             "id": 12,
@@ -278,17 +166,7 @@ export const productData = {
                 "rate": 4.50,
                 "count": 1
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "white",
-                ],
-            },
+            "color": "white",
         },
         {
             "id": 13,
@@ -302,17 +180,7 @@ export const productData = {
                 "rate": 4.21,
                 "count": 150
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "gray",
-                ],
-            },
+            "color": "gray",
         },
         {
             "id": 14,
@@ -326,17 +194,7 @@ export const productData = {
                 "rate": 4.58,
                 "count": 98
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 15,
@@ -350,17 +208,7 @@ export const productData = {
                 "rate": 4.05,
                 "count": 223
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "gray",
-                ],
-            },
+            "color": "gray",
         },
         {
             "id": 16,
@@ -374,17 +222,7 @@ export const productData = {
                 "rate": 4.10,
                 "count": 114
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 17,
@@ -398,18 +236,7 @@ export const productData = {
                 "rate": 4.72,
                 "count": 118
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "white",
-                ],
-            },
-
+            "color": "white",
         },
         {
             "id": 18,
@@ -423,17 +250,7 @@ export const productData = {
                 "rate": 4.43,
                 "count": 197
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 19,
@@ -447,17 +264,7 @@ export const productData = {
                 "rate": 4.88,
                 "count": 314
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "red",
-                ],
-            },
+            "color": "red",
         },
         {
             "id": 20,
@@ -471,17 +278,7 @@ export const productData = {
                 "rate": 4.47,
                 "count": 163
             },
-            "filters": {
-                "product": [
-                    "shirt",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "gray",
-                ],
-            },
+            "color": "gray",
         },
         {
             "id": 21,
@@ -495,17 +292,7 @@ export const productData = {
                 "rate": 4.17,
                 "count": 36
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 22,
@@ -519,17 +306,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 23,
@@ -543,17 +320,7 @@ export const productData = {
                 "rate": 5,
                 "count": 2
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 24,
@@ -567,17 +334,7 @@ export const productData = {
                 "rate": 3.87,
                 "count": 155
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 25,
@@ -591,17 +348,7 @@ export const productData = {
                 "rate": 4.55,
                 "count": 28
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 26,
@@ -615,17 +362,7 @@ export const productData = {
                 "rate": 3.87,
                 "count": 217
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 27,
@@ -639,17 +376,7 @@ export const productData = {
                 "rate": 4.2,
                 "count": 140
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 28,
@@ -663,17 +390,7 @@ export const productData = {
                 "rate": 4.02,
                 "count": 151
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 29,
@@ -687,17 +404,7 @@ export const productData = {
                 "rate": 4.87,
                 "count": 102
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 30,
@@ -711,17 +418,7 @@ export const productData = {
                 "rate": 4.66,
                 "count": 212
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 31,
@@ -735,17 +432,7 @@ export const productData = {
                 "rate": 3.88,
                 "count": 337
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 32,
@@ -759,17 +446,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 33,
@@ -783,17 +460,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 34,
@@ -807,17 +474,7 @@ export const productData = {
                 "rate": 5,
                 "count": 1
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 35,
@@ -831,17 +488,7 @@ export const productData = {
                 "rate": 4.67,
                 "count": 22
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
         {
             "id": 36,
@@ -855,18 +502,7 @@ export const productData = {
                 "rate": 4.6,
                 "count": 187
             },
-            "filters": {
-                "product": [
-                    "jeans",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "denim",
-                ],
-            },
+            "color": "denim",
         },
 
     ],
@@ -883,17 +519,7 @@ export const productData = {
                 "rate": 3.73,
                 "count": 46
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 2,
@@ -907,17 +533,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "white",
-                ],
-            },
+            "color": "white",
         },
         {
             "id": 3,
@@ -931,17 +547,7 @@ export const productData = {
                 "rate": 4.11,
                 "count": 153
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "gray",
-                ],
-            },
+            "color": "gray",
         },
         {
             "id": 4,
@@ -955,17 +561,7 @@ export const productData = {
                 "rate": 4.65,
                 "count": 122
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "pink",
-                ],
-            },
+            "color": "pink",
         },
         {
             "id": 5,
@@ -979,17 +575,7 @@ export const productData = {
                 "rate": 5,
                 "count": 3
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "cream",
-                ],
-            },
+            "color": "cream",
         },
         {
             "id": 6,
@@ -1003,17 +589,7 @@ export const productData = {
                 "rate": 3.89,
                 "count": 211
             },
-            "filters": {
-                "product": [
-                    "sneakers",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "white",
-                ],
-            },
+            "color": "white",
         },
         {
             "id": 7,
@@ -1027,18 +603,7 @@ export const productData = {
                 "rate": 4.5,
                 "count": 53
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "women",
-
-                ],
-                "colors": [
-                    "white",
-                ],
-            },
+            "color": "white",
         },
         {
             "id": 8,
@@ -1052,17 +617,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "red",
-                ],
-            },
+            "color": "red",
         },
         {
             "id": 9,
@@ -1076,17 +631,7 @@ export const productData = {
                 "rate": 4.15,
                 "count": 468
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "women",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 10,
@@ -1100,17 +645,7 @@ export const productData = {
                 "rate": 4.42,
                 "count": 210
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 11,
@@ -1124,17 +659,7 @@ export const productData = {
                 "rate": 0,
                 "count": 0
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 12,
@@ -1148,17 +673,7 @@ export const productData = {
                 "rate": 4.79,
                 "count": 179
             },
-            "filters": {
-                "product": [
-                    "formal",
-                ],
-                "gender": [
-                    "men",
-                ],
-                "colors": [
-                    "brown",
-                ],
-            },
+            "color": "brown",
         },
         {
             "id": 13,
@@ -1172,18 +687,7 @@ export const productData = {
                 "rate": 4.6,
                 "count": 122
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 14,
@@ -1197,18 +701,7 @@ export const productData = {
                 "rate": 1,
                 "count": 1
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
         {
             "id": 15,
@@ -1222,18 +715,7 @@ export const productData = {
                 "rate": 4.75,
                 "count": 86
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "green",
-                ],
-            },
+            "color": "green",
         },
         {
             "id": 16,
@@ -1247,18 +729,7 @@ export const productData = {
                 "rate": 4.55,
                 "count": 281
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "orange",
-                ],
-            },
+            "color": "orange",
         },
         {
             "id": 17,
@@ -1272,18 +743,7 @@ export const productData = {
                 "rate": 4.00,
                 "count": 12
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "blue",
-                ],
-            },
+            "color": "blue",
         },
         {
             "id": 18,
@@ -1297,18 +757,7 @@ export const productData = {
                 "rate": 3.96,
                 "count": 192
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "gray",
-                ],
-            },
+            "color": "gray",
         },
         {
             "id": 19,
@@ -1322,19 +771,7 @@ export const productData = {
                 "rate": 4.94,
                 "count": 284
             },
-            "filters": {
-                "product": [
-                    "crocks",
-                ],
-                "gender": [
-                    "women",
-                    "men",
-                ],
-                "colors": [
-                    "black",
-                ],
-            },
+            "color": "black",
         },
-
     ]
 };
