@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Alert } from "../Alert/Alert";
+
 export const ProductCard = ({
     title,
     image,
@@ -8,6 +11,8 @@ export const ProductCard = ({
     color,
     oldPrice
 }) => {
+    const [cartAlert, setCartAlert] = useState(false);
+
     return (
         <li>
             <p>Title: {title}</p>
@@ -19,6 +24,11 @@ export const ProductCard = ({
             <p>Price: ${price}</p>
             <p>Stars: {rating.rate} / Reviews: {rating.count}</p>
             <p>Color: {color}</p>
+            <button onClick={() => setCartAlert(true)}>Add to cart</button>
+            {cartAlert
+                ? <Alert title={title} price={price} setCartAlert={setCartAlert} />
+                : ''
+            }
         </li>
     );
 };

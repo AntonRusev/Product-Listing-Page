@@ -11,6 +11,7 @@ export const ProductProvider = ({
     const [categories, setCategories] = useState([]);
     const [currentCategory, setCurrentCategory] = useState('initial');
     const [categoryData, setCategoryData] = useState([]);
+    const [itemsToDisplay, setItemsToDisplay] = useState([]);
 
     // Setting up all possible categories
     useEffect(() => {
@@ -29,15 +30,17 @@ export const ProductProvider = ({
     useEffect(() => {
         const result = discountCalculator(productData[currentCategory])
         setCategoryData(result);
+        setItemsToDisplay(result)
     }, [currentCategory]);
 
     const onCategoryChange = (category) => {
         setCurrentCategory(category);
     };
 
-
     const productContextValue = {
         onCategoryChange,
+        setItemsToDisplay,
+        itemsToDisplay,
         categories,
         currentCategory,
         categoryData

@@ -12,7 +12,7 @@ export const ProductList = () => {
     });
     const [device, setDevice] = useState('mobile');
 
-    const { categoryData } = useContext(ProductContext);
+    const { itemsToDisplay } = useContext(ProductContext);
 
     // Current window width
     const { width } = useWindowDimensions();
@@ -35,7 +35,7 @@ export const ProductList = () => {
                 toDisplay: 15
             });
         };
-    }, [categoryData]);
+    }, [itemsToDisplay]);
 
     // Setting up the window width ranges for devices
     useEffect(() => {
@@ -57,7 +57,7 @@ export const ProductList = () => {
         } else {
             setProductsShown({ toDisplay: 5, pageLimit: 5 });
         };
-    }, [categoryData, width]);
+    }, [itemsToDisplay, width]);
 
     // Showing more products
     const handleMoreProducts = () => {
@@ -67,16 +67,16 @@ export const ProductList = () => {
 
     return (
         <section>
-            {!categoryData
+            {!itemsToDisplay || itemsToDisplay.length === 0
                 ?
                 <p>There are no products to show.</p>
                 :
                 <div>
                     <ul>
-                        {categoryData.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
+                        {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
                     </ul>
 
-                    {productsShown.toDisplay < categoryData.length && (
+                    {productsShown.toDisplay < itemsToDisplay.length && (
                         <button
                             className="mt-4"
                             onClick={handleMoreProducts}

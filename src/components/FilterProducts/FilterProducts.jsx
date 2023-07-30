@@ -16,7 +16,7 @@ export const FilterProducts = () => {
         value: [0, 100]
     });
 
-    const { categoryData } = useContext(ProductContext);
+    const { categoryData, setItemsToDisplay } = useContext(ProductContext);
 
     useEffect(() => {
         if (categoryData) {
@@ -28,6 +28,10 @@ export const FilterProducts = () => {
             setPriceRange({ value: [range.lowest, range.highest], lowest: range.lowest, highest: range.highest });
         };
     }, [categoryData]);
+
+    useEffect(() => {
+        setItemsToDisplay(filteredData);
+    }, [filteredData]);
 
     useEffect(() => {
         setFilteredData([]);

@@ -3,32 +3,33 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 
 export const SortProducts = () => {
-    const { categoryData } = useContext(ProductContext);
+    const { itemsToDisplay, setItemsToDisplay } = useContext(ProductContext);
 
     const onSort = (order, sortBy) => {
         let sortedProducts;
 
         if (sortBy === 'title') {
             if (order === 'incremental') {
-                sortedProducts = [...categoryData].sort((a, b) => a[sortBy].localeCompare(b[sortBy], undefined, {
+                sortedProducts = [...itemsToDisplay].sort((a, b) => a[sortBy].localeCompare(b[sortBy], undefined, {
                     numeric: true,
                     sensitivity: 'base'
                 }));
             } else {
-                sortedProducts = [...categoryData].sort((a, b) => b[sortBy].localeCompare(a[sortBy], undefined, {
+                sortedProducts = [...itemsToDisplay].sort((a, b) => b[sortBy].localeCompare(a[sortBy], undefined, {
                     numeric: true,
                     sensitivity: 'base'
                 }));
             };
         } else if (sortBy === 'price') {
             if (order === 'incremental') {
-                sortedProducts = [...categoryData].sort((a, b) => Number(a[sortBy]) - Number(b[sortBy]));
+                sortedProducts = [...itemsToDisplay].sort((a, b) => Number(a[sortBy]) - Number(b[sortBy]));
             } else {
-                sortedProducts = [...categoryData].sort((a, b) => Number(b[sortBy]) - Number(a[sortBy]));
+                sortedProducts = [...itemsToDisplay].sort((a, b) => Number(b[sortBy]) - Number(a[sortBy]));
             };
         };
 
         // TODO
+        setItemsToDisplay(sortedProducts);
         console.log(sortedProducts);
     };
 
