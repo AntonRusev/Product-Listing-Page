@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+
 import { ProductContext } from "../../context/ProductContext";
 import { ProductCard } from "../ProductCard/ProductCard";
 
@@ -8,16 +10,56 @@ export const ProductList = () => {
         pageLimit: 5,
         toDisplay: 5
     });
+    const [device, setDevice] = useState('mobile');
 
     const { categoryData } = useContext(ProductContext);
 
+    // Current window width
+    const { width } = useWindowDimensions();
+
+    // Reseting the number of displayed products upon category change
     useEffect(() => {
-        setProductsShown({
-            pageLimit: 5,
-            toDisplay: 5
-        });
+        if (device === 'mobile') {
+            setProductsShown({
+                pageLimit: 5,
+                toDisplay: 5
+            });
+        } else if (device === 'tablet') {
+            setProductsShown({
+                pageLimit: 10,
+                toDisplay: 10
+            });
+        } else if (device === 'desktop') {
+            setProductsShown({
+                pageLimit: 15,
+                toDisplay: 15
+            });
+        };
     }, [categoryData]);
 
+    // Setting up the window width ranges for devices
+    useEffect(() => {
+        if (width > 1220) {
+            setDevice('desktop');
+        } else if (width > 720) {
+            setDevice('tablet');
+        } else {
+            setDevice('mobile');
+        }
+    }, [width]);
+
+    // Rendering different number of products depending on screen size(mobile vs desktop);
+    useEffect(() => {
+        if (device === 'desktop') {
+            setProductsShown({ toDisplay: 15, pageLimit: 15 });
+        } else if (device === 'tablet') {
+            setProductsShown({ toDisplay: 10, pageLimit: 10 });
+        } else {
+            setProductsShown({ toDisplay: 5, pageLimit: 5 });
+        };
+    }, [categoryData, width]);
+
+    // Showing more products
     const handleMoreProducts = () => {
         const nextToDisplay = productsShown.toDisplay + productsShown.pageLimit;
         setProductsShown({ ...productsShown, toDisplay: nextToDisplay });
