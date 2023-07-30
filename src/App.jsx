@@ -5,15 +5,19 @@ import { SortProducts } from './components/SortProducts/SortProducts';
 import { ProductProvider } from './context/ProductContext';
 
 import './App.css';
+import { CategoryDescription } from './components/CategoryDescription/CategoryDescription';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
     return (
         <>
             <ProductProvider>
                 <Header />
+                <CategoryDescription />
                 <SortProducts />
                 <FilterProducts />
                 <ProductList />
+                <Footer />
             </ProductProvider>
         </>
     );

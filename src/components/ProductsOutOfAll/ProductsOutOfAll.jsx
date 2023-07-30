@@ -1,9 +1,12 @@
+import { firstLetterToCapital } from "../../utils/firstLetterToCapital";
+
 export const ProductsOutOfAll = ({
     currentCategory,
     itemsToDisplay,
     productsShown
 }) => {
-    const category = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+
+    const category = firstLetterToCapital(currentCategory)
     const allProducts = itemsToDisplay.length;
     
     let currentlyDisplayed;

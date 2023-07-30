@@ -775,3 +775,8 @@ export const productData = {
         },
     ]
 };
+
+export const categoryDescription = {
+    clothes: 'Here You can find models from world\'s most popular fashion brands.',
+    footwear: 'Browse the richest collection of crocks on the entire internet!',
+};
