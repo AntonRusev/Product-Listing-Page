@@ -4,6 +4,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 import { ProductContext } from "../../context/ProductContext";
 import { ProductCard } from "../ProductCard/ProductCard";
+import { ProductsOutOfAll } from "../ProductsOutOfAll/ProductsOutOfAll";
 
 export const ProductList = () => {
     const [productsShown, setProductsShown] = useState({
@@ -12,7 +13,7 @@ export const ProductList = () => {
     });
     const [device, setDevice] = useState('mobile');
 
-    const { itemsToDisplay } = useContext(ProductContext);
+    const { itemsToDisplay, currentCategory } = useContext(ProductContext);
 
     // Current window width
     const { width } = useWindowDimensions();
@@ -72,6 +73,11 @@ export const ProductList = () => {
                 <p>There are no products to show.</p>
                 :
                 <div>
+                    <ProductsOutOfAll 
+                    currentCategory={currentCategory}
+                    itemsToDisplay={itemsToDisplay} 
+                    productsShown={productsShown}
+                    />
                     <ul>
                         {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
                     </ul>

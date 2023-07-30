@@ -10,10 +10,8 @@ export const Alert = ({
     useEffect(() => {
         setTimeout(() => {
             setCartAlert(false);
-        }, 3000);
+        }, 2000);
     }, []);
-
-    console.log(title)
 
     return (
         <section onClick={() => setCartAlert(false)} className={style.overlay}>

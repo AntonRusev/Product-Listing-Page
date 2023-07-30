@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { ProductContext } from "../../context/ProductContext";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export const SortProducts = () => {
+    const [showSortOptions, setShowSortOptions] = useState(false);
+
     const { itemsToDisplay, setItemsToDisplay } = useContext(ProductContext);
 
     const onSort = (order, sortBy) => {
@@ -28,20 +31,31 @@ export const SortProducts = () => {
             };
         };
 
-        // TODO
         setItemsToDisplay(sortedProducts);
-        console.log(sortedProducts);
     };
 
+    // Close dropdown on click outside the menu
+    const domNode = useClickOutside(() => {
+        setShowSortOptions(false);
+    });
+
     return (
-        <div>
-            <button>Sort by...</button>
-            <ul>
-                <li onClick={() => onSort('incremental', 'title')}>Name(A-Z)</li>
-                <li onClick={() => onSort('decremental', 'title')}>Name(Z-A)</li>
-                <li onClick={() => onSort('decremental', 'price')}>Price(Highest)</li>
-                <li onClick={() => onSort('incremental', 'price')}>Price(Lowest)</li>
-            </ul>
+        <div ref={domNode}>
+            {/* Toggle dropdown on button click */}
+            <button onClick={() => setShowSortOptions(!showSortOptions)}>Sort by...</button>
+
+            {showSortOptions
+                ?
+                <ul>
+                    <li onClick={() => onSort('incremental', 'title')}>Name(A-Z)</li>
+                    <li onClick={() => onSort('decremental', 'title')}>Name(Z-A)</li>
+                    <li onClick={() => onSort('decremental', 'price')}>Price(Highest)</li>
+                    <li onClick={() => onSort('incremental', 'price')}>Price(Lowest)</li>
+                </ul>
+                :
+                ""
+            }
+
         </div>
     );
 };
