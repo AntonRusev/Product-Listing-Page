@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
 import { productData } from '../assets/data';
+import { discountCalculator } from "../utils/discountCalculator";
 
 export const ProductContext = createContext();
 
@@ -26,7 +27,8 @@ export const ProductProvider = ({
 
     // Populating data for the current category only
     useEffect(() => {
-        setCategoryData(productData[currentCategory]);
+        const result = discountCalculator(productData[currentCategory])
+        setCategoryData(result);
     }, [currentCategory]);
 
     const onCategoryChange = (category) => {
