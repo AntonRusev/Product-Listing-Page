@@ -6,20 +6,15 @@ import { ProductContext } from "../../context/ProductContext";
 import style from './FilterProducts.module.css';
 import { priceRangeExtractor } from "../../utils/priceRangeExtractor";
 
-// const min = 1;
-// const max = 1000;
-
 export const FilterProducts = () => {
     const [filterOptions, setFilterOptions] = useState([]);
     const [filterTags, setFilterTags] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
-    // const [priceRange, setPriceRange] = useState([min, max]);
     const [priceRange, setPriceRange] = useState({
         lowest: 0,
         highest: 0,
-        value: [0, 0]
+        value: [0, 100]
     });
-
 
     const { categoryData } = useContext(ProductContext);
 
@@ -30,35 +25,37 @@ export const FilterProducts = () => {
 
             // Setting highest and lowest possible prices for the current category
             const range = priceRangeExtractor(categoryData);
-            setPriceRange((state) => ({ ...state, lowest: range.lowest, highest: range.highest }))
+            setPriceRange({ value: [range.lowest, range.highest], lowest: range.lowest, highest: range.highest });
         };
     }, [categoryData]);
 
     useEffect(() => {
         setFilteredData([]);
 
-        if (categoryData && filterTags.length > 0) {
+        const minFilterPrice = priceRange.value[0];
+        const maxFilterPrice = priceRange.value[1]
+
+        if (categoryData) {
             categoryData.filter((product) => {
-                filterTags.map((filterTag) => {
-                    if (product.color === filterTag
-                        && product.price >= priceRange.value[0]
-                        && product.price <= priceRange.value[1]
-                    ) {
+                if (filterTags.length > 0) {
+                    // If there is filtering by color active
+                    filterTags.map((filterTag) => {
+                        if (product.color === filterTag
+                            && product.price >= minFilterPrice
+                            && product.price <= maxFilterPrice
+                        ) {
+                            setFilteredData((state) => [product, ...state]);
+                        };
+                    });
+                } else {
+                    // // Only in case of price filtering
+                    if (product.price >= minFilterPrice
+                        && product.price <= maxFilterPrice) {
                         setFilteredData((state) => [product, ...state]);
                     };
-                });
-            });
-        }
-        if (categoryData && filterTags.length === 0) {
-            categoryData.filter((product) => {
-                console.log('hit')
-                if (product.price >= priceRange.value[0]
-                    && product.price <= priceRange.value[1]) {
-                    setFilteredData((state) => [product, ...state]);
-
                 };
             });
-        }
+        };
     }, [filterTags, priceRange]);
 
     // Tracking which filter boxes are checked
@@ -90,7 +87,22 @@ export const FilterProducts = () => {
         return options;
     };
 
-    // TODO Add clear filters button
+    // Clearing and reseting all filters
+    const clearFilters = () => {
+        setFilterTags([]);
+
+        if (categoryData) {
+            const range = priceRangeExtractor(categoryData);
+            setPriceRange({ value: [range.lowest, range.highest], lowest: range.lowest, highest: range.highest });
+        };
+
+        // Unchecking the checkboxes
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        };
+    };
 
     return (
         <div className={style.filter}>
@@ -139,6 +151,8 @@ export const FilterProducts = () => {
                     })
                 }
             </ul>
+
+            <button onClick={clearFilters}>Clear</button>
         </div>
     );
 };
