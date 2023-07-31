@@ -3,10 +3,12 @@ import Slider from "react-slider";
 
 import { ProductContext } from "../../context/ProductContext";
 
-import style from './FilterProducts.module.css';
 import { priceRangeExtractor } from "../../utils/priceRangeExtractor";
 
+import style from './FilterProducts.module.scss';
+
 export const FilterProducts = () => {
+    const [showFilterOptions, setShowFilterOptions] = useState(false);
     const [filterOptions, setFilterOptions] = useState([]);
     const [filterTags, setFilterTags] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
@@ -109,54 +111,62 @@ export const FilterProducts = () => {
     };
 
     return (
-        <div className={style.filter}>
-            <h4>Filter:</h4>
+        <section className={style.filter}>
+            <button onClick={() => setShowFilterOptions(!showFilterOptions)}>Fiter</button>
 
-            <div>
-                <p>{priceRange.value[0]} - {priceRange.value[1]}</p>
-                <Slider
-                    // className="horizontal-slider"
-                    // thumbClassName="example-thumb"
-                    // trackClassName="example-track"
-                    // defaultValue={[0, 100]}
-                    // ariaLabel={['Lower thumb', 'Upper thumb']}
-                    // ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                    // renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                    // pearling
-                    // minDistance={10}
+            {showFilterOptions
+                ?
+                <div>
+                    <div>
+                        <p>{priceRange.value[0]} - {priceRange.value[1]}</p>
+                        <Slider
+                            // className="horizontal-slider"
+                            // thumbClassName="example-thumb"
+                            // trackClassName="example-track"
+                            // defaultValue={[0, 100]}
+                            // ariaLabel={['Lower thumb', 'Upper thumb']}
+                            // ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                            // renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                            // pearling
+                            // minDistance={10}
 
-                    className={style.slider}
-                    thumbClassName={style.thumb}
-                    trackClassName={style.track}
-                    withTracks={true}
-                    onChange={(value) => setPriceRange((state) => ({ ...state, value }))}
-                    value={priceRange.value}
-                    min={priceRange.lowest}
-                    max={priceRange.highest}
-                    minDistance={10}
-                />
-            </div>
+                            className={style.slider}
+                            thumbClassName={style.thumb}
+                            trackClassName={style.track}
+                            withTracks={true}
+                            onChange={(value) => setPriceRange((state) => ({ ...state, value }))}
+                            value={priceRange.value}
+                            min={priceRange.lowest}
+                            max={priceRange.highest}
+                            minDistance={10}
+                        />
+                    </div>
 
-            <ul>
-                {
-                    filterOptions.map((color) => {
-                        return (
-                            <li key={color}>
-                                <label>
-                                    <input
-                                        onChange={filterHandler}
-                                        type="checkbox"
-                                        value={color}
-                                    />
-                                    {color}
-                                </label>
-                            </li>
-                        );
-                    })
-                }
-            </ul>
+                    <ul>
+                        {
+                            filterOptions.map((color) => {
+                                return (
+                                    <li key={color}>
+                                        <label>
+                                            <input
+                                                onChange={filterHandler}
+                                                type="checkbox"
+                                                value={color}
+                                            />
+                                            {color}
+                                        </label>
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
 
-            <button onClick={clearFilters}>Clear</button>
-        </div>
+                    <button onClick={clearFilters}>Clear</button>
+                </div>
+                :
+                ""
+            }
+
+        </section>
     );
 };

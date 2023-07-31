@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import style from "./Alert.module.css";
+import style from "./Alert.module.scss";
 
 export const Alert = ({
     title,

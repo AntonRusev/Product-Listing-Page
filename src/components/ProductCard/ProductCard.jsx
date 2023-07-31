@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Alert } from "../Alert/Alert";
 
+import style from './ProductCard.module.scss';
+
 export const ProductCard = ({
     title,
     image,
@@ -14,10 +16,10 @@ export const ProductCard = ({
     const [cartAlert, setCartAlert] = useState(false);
 
     return (
-        <li>
-            <p>Title: {title}</p>
-            <img src={image} alt="" />
-            <p>Description: {description}</p>
+        <li className={style.card}>
+            <img className={style.image} src={image} alt="" />
+            <h6 className={style.cardTitle}>Title: {title}</h6>
+            <p className={style.desc}>Description: {description}</p>
             {/* If there is a discount show these two */}
             {oldPrice ? <p>Old Price: ${oldPrice}</p> : ''}
             {oldPrice ? <p>Sale -%: {discountPercentage}</p> : ''}

@@ -1,0 +1,57 @@
+@import url('./reset.css');
+@import './sass/variables.scss';
+@import './sass/mixins.scss';
+@import './sass/breakpoints.scss';
+
+.main {
+    position: sticky;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    max-height: 100vh;
+    max-width: 1920px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+    grid-template-areas:
+        "desc desc"
+        "filter sort"
+        "list list"
+        "list list"
+        "list list"
+        "list list";
+
+    .gridItem:nth-child(1) {
+        grid-area: desc;
+    }
+
+    .gridItem:nth-child(2) {
+        grid-area: sort;
+    }
+
+    .gridItem:nth-child(3) {
+        grid-area: filter;
+    }
+
+    .gridItem:nth-child(4) {
+        grid-area: list;
+    }
+
+    // Responsive Design Styles
+    @include tablet {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 6px;
+        grid-template-areas:
+            "filter desc desc desc sort"
+            "filter list list list list"
+            "filter list list list list"
+            "filter list list list list"
+            "filter list list list list";
+    }
+}
+
+.max {
+    max-width: 1920px;
+}

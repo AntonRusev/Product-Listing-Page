@@ -6,6 +6,8 @@ import { ProductContext } from "../../context/ProductContext";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { ProductsOutOfAll } from "../ProductsOutOfAll/ProductsOutOfAll";
 
+import style from './ProductList.module.scss';
+
 export const ProductList = () => {
     const [productsShown, setProductsShown] = useState({
         pageLimit: 5,
@@ -67,18 +69,18 @@ export const ProductList = () => {
     };
 
     return (
-        <section>
+        <section className={style.productList}>
             {!itemsToDisplay || itemsToDisplay.length === 0
                 ?
                 <p>There are no products to show.</p>
                 :
-                <div>
+                <div className={style.shownProducts}>
                     <ProductsOutOfAll 
                     currentCategory={currentCategory}
                     itemsToDisplay={itemsToDisplay} 
                     productsShown={productsShown}
                     />
-                    <ul>
+                    <ul className={style.products}>
                         {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
                     </ul>
 

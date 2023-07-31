@@ -1,0 +1,26 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+@import '../../sass/breakpoints.scss';
+
+.productList {
+    @include flexCenterContainer(map-get($colors, "transparent"));
+    max-width: 1920px;
+
+    .shownProducts {
+        width: 100%;
+
+        .products {
+            @include flexCenterContainer(map-get($colors, "transparent"));
+            flex-direction: column;
+
+            gap: calc($base-gap * 5);
+
+            // Responsive Design Styles
+            @include tablet {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+}

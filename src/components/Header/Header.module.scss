@@ -1,0 +1,45 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.header {
+    @include flexCenterContainer(map-get($colors, "transparent"));
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: fixed;
+    background-image: url("https://images.unsplash.com/photo-1542060748-10c28b62716f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+    top: 0;
+    left: 0;
+    height: 7rem;
+    width: 100%;
+    max-width: 1920px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: calc($base-font-size * 2);
+    color: map-get($colors, "white");
+    z-index: 10;
+
+    .title {
+        font-size: calc($base-font-size * 2.5);
+        font-weight: bolder;
+        -webkit-text-stroke: 1px #23430C;
+        text-shadow: -1px 1px 2px #23430C,
+            1px 1px 2px #23430C,
+            1px -1px 0 #23430C,
+            -1px -1px 0 #23430C;
+    }
+
+    .navList {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+        margin: calc($base-margin);
+        gap: calc($base-gap * 2);
+    }
+
+    @media (max-width: 600px) { /* Target only devices below 600px */
+        .header {
+          position: fixed;
+          z-index: 999; /* So that it is not under the other elements */
+          background: #1c2454; /* It was transparent */
+        }
+    
+      }
+}

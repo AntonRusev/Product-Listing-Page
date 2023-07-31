@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import { useClickOutside } from "../../hooks/useClickOutside";
 
+import style from './SortProducts.module.scss';
+
 export const SortProducts = () => {
     const [showSortOptions, setShowSortOptions] = useState(false);
 
@@ -40,7 +42,7 @@ export const SortProducts = () => {
     });
 
     return (
-        <div ref={domNode}>
+        <section ref={domNode} className={style.sortProducts}>
             {/* Toggle dropdown on button click */}
             <button onClick={() => setShowSortOptions(!showSortOptions)}>Sort by...</button>
 
@@ -56,6 +58,6 @@ export const SortProducts = () => {
                 ""
             }
 
-        </div>
+        </section>
     );
 };

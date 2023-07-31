@@ -1,0 +1,12 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+@import '../../sass/breakpoints.scss';
+
+.sortProducts {
+    @include tablet {
+        background-color: red;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 10;
+    }
+}

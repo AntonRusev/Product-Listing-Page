@@ -1,0 +1,53 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+@import '../../sass/breakpoints.scss';
+
+.filter {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // max-width: 60rem;
+    /* align-items: center; */
+    // width: 100%;
+    // width: 20%;
+    // height: 100%;
+    // padding-bottom: 7rem;
+    // background-color: red;
+    // position: -webkit-sticky;
+    // position: fixed;
+    // top: 7rem;
+    // left: 0;
+    // z-index: 10;
+
+    @include tablet {
+        height: 100%;
+        padding-bottom: 7rem;
+        background-color: red;
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.slider {
+    /* width: 50%; */
+    width: 10rem;
+    height: 25px;
+    background-color: red;
+}
+
+.thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: yellow;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.track {
+    background-color: blue;
+    height: 10px;
+    /* width: 1%; */
+}

@@ -1,0 +1,31 @@
+// Breakpoints used for responsive design
+
+$breakpoints: (
+    "mobile": 0,
+    "tablet": 720px,
+    "desktop": 1220px,
+);
+
+@mixin mobile {
+    @media (min-width: map-get($breakpoints, "mobile")) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: map-get($breakpoints, "tablet")) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, "desktop")) {
+        @content;
+    }
+}
+
+@mixin breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
