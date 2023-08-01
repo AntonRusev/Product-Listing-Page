@@ -9,21 +9,23 @@ export const Header = () => {
 
     return (
         <header className={style.header}>
-            <h1 className={style.title}>Apparel Averagestore</h1>
-            <nav className={style.nav}>
-                <ul className={style.navList}>
-                    {/* Generating a button for every possible category */}
-                    {!categories
-                        ? <p>...</p>
-                        : categories.map((category) =>
-                            <li key={category}>
-                                <button onClick={() => onCategoryChange(category)} >
-                                    {category}
-                                </button>
-                            </li>)
-                    }
-                </ul>
-            </nav>
+            <div className={style.centered}>
+                <h1 className={style.title}>Apparel Averagestore</h1>
+                <nav className={style.nav}>
+                    <ul className={style.navList}>
+                        {/* Generating a button for every possible category */}
+                        {!categories
+                            ? <p>...</p>
+                            : categories.map((category) =>
+                                <li key={category}>
+                                    <button onClick={() => onCategoryChange(category)} >
+                                        {category}
+                                    </button>
+                                </li>)
+                        }
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 };

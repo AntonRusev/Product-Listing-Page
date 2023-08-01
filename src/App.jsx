@@ -12,7 +12,6 @@ import { Footer } from './components/Footer/Footer';
 function App() {
     return (
         <>
-            <div className={style.max}>
                 <ProductProvider>
                     <Header />
                     <main className={style.main}>
@@ -34,7 +33,6 @@ function App() {
                     </main>
                     {/* <Footer /> */}
                 </ProductProvider>
-            </div>
         </>
     );
 };

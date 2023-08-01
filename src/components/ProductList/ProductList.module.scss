@@ -5,14 +5,16 @@
 .productList {
     @include flexCenterContainer(map-get($colors, "transparent"));
     max-width: 1920px;
+    min-width: 100%;
+    background-color: yellow;
 
     .shownProducts {
         width: 100%;
+        text-align: center;
 
         .products {
             @include flexCenterContainer(map-get($colors, "transparent"));
             flex-direction: column;
-
             gap: calc($base-gap * 5);
 
             // Responsive Design Styles
