@@ -317,7 +317,7 @@ export const productData = {
             "category": "clothing",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmjKiqt8xQRH_ALhMOX80_CCndEr1-fHTiww&usqp=CAU",
             "rating": {
-                "rate": 5,
+                "rate": 5.00,
                 "count": 2
             },
             "color": "denim",
@@ -373,7 +373,7 @@ export const productData = {
             "category": "clothing",
             "image": "https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPRAGZO-MEN-S-RISH42460577C66709/1626442844331_4.jpg",
             "rating": {
-                "rate": 4.2,
+                "rate": 4.20,
                 "count": 140
             },
             "color": "denim",
@@ -471,7 +471,7 @@ export const productData = {
             "category": "clothing",
             "image": "https://n.nordstrommedia.com/id/sr3/b94e5ed4-6b8f-4ef2-a192-9dc406bb207e.jpeg?h=365&w=240&dpr=2",
             "rating": {
-                "rate": 5,
+                "rate": 5.00,
                 "count": 1
             },
             "color": "denim",
@@ -499,7 +499,7 @@ export const productData = {
             "category": "clothing",
             "image": "https://www.closed.com/out/closed/src/media/landingpages/denim-fit-guide/unisex//models/x-lent_front.jpg",
             "rating": {
-                "rate": 4.6,
+                "rate": 4.60,
                 "count": 187
             },
             "color": "denim",
@@ -572,7 +572,7 @@ export const productData = {
             "category": "footwear",
             "image": "https://www.nautica.com/dw/image/v2/BDCV_PRD/on/demandware.static/-/Sites-nautica-master-catalog/default/dw5cd07409/images/0731516000016_CL3663_650_A.jpg?sw=600&sh=600&sm=fit",
             "rating": {
-                "rate": 5,
+                "rate": 5.00,
                 "count": 3
             },
             "color": "cream",
@@ -600,7 +600,7 @@ export const productData = {
             "category": "footwear",
             "image": "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/20496106/2022/10/22/308e917e-b1bd-443c-8c4b-0a889df698281666414404639KrafterWomenPinkSolidFormalShoes1.jpg",
             "rating": {
-                "rate": 4.5,
+                "rate": 4.50,
                 "count": 53
             },
             "color": "white",
@@ -684,7 +684,7 @@ export const productData = {
             "category": "footwear",
             "image": "https://www.different-stylebg.com/wp-upload_29085/pictures-1_%D0%9C%D1%8A%D0%B6%D0%BA%D0%B8-%D1%81%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%D0%B8-crocks-highquality-summer.jpeg",
             "rating": {
-                "rate": 4.6,
+                "rate": 4.60,
                 "count": 122
             },
             "color": "black",
@@ -698,7 +698,7 @@ export const productData = {
             "category": "footwear",
             "image": "https://m.media-amazon.com/images/I/61AwAkqMZuL._AC_UF1000,1000_QL80_.jpg",
             "rating": {
-                "rate": 1,
+                "rate": 1.00,
                 "count": 1
             },
             "color": "black",

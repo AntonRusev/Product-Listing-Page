@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import { Alert } from "../Alert/Alert";
+import { Rating } from "../Rating/Rating";
 
 import style from './ProductCard.module.scss';
 
@@ -21,7 +23,8 @@ export const ProductCard = ({
             <h6 className={style.cardTitle}>Title: {title}</h6>
             <p className={style.desc}>Description: {description.substring(0, 100)}...</p>
             <div className={style.ratings}>
-                Stars: {rating.rate} / Reviews: {rating.count}
+                <Rating rating={rating.rate} />
+                Average rating of {rating.rate} based on {rating.count} reviews.
             </div>
             <div className={style.pricing}>
                 {/* If there is a discount show these two */}

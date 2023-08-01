@@ -13,21 +13,21 @@ function App() {
             <ProductProvider>
                 <Header />
                 <main className={style.main}>
-                    <p className={style.gridItem}>
+                    <div className={style.gridItem}>
                         <CategoryDescription />
-                    </p>
+                    </div>
 
-                    <p className={style.gridItem}>
+                    <div className={style.gridItem}>
                         <SortProducts />
-                    </p>
+                    </div>
 
-                    <p className={style.gridItem}>
+                    <div className={style.gridItem}>
                         <FilterProducts />
-                    </p>
+                    </div>
 
-                    <p className={style.gridItem}>
+                    <div className={style.gridItem}>
                         <ProductList />
-                    </p>
+                    </div>
                 </main>
             </ProductProvider>
         </>
