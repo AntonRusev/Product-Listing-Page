@@ -1,69 +1,74 @@
 @import './variables.scss';
+@import './breakpoints.scss';
 
 // Cross-browser support
 @mixin transition($transition...) {
-  -webkit-transition: $transition;
-  -moz-transition: $transition;
-  -ms-transition: $transition;
-  -o-transition: $transition;
-  transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
 }
 
 @mixin transform($transform) {
-  -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -ms-transform: $transform;
-  -o-transform: $transform;
-  transform: $transform;
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
 }
 
 // Containers
 @mixin flexCenterContainer($bg-color: transparent) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $bg-color;
-}
-
-@mixin btnHolder {
-  .btnHolder {
-    @include flexCenterContainer(map-get($colors, "transparent"));
-    padding: $base-padding;
-    gap: $base-gap * 2;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-color;
 }
 
 // Buttons
-@mixin basicButton {
-  .basicBtn {
-    padding: 20px 40px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-size: 15px;
-    transition: all .5s ease;
-    text-decoration: none;
-    font-family: 'Yatra One', cursive;
-    line-height: $base-font-size;
-    cursor: pointer;
-  }
+@mixin dropdownBtn {
+    .dropdownBtn {
+        width: 99%;
+        height: 2rem;
+        margin: calc($base-margin / 10) 0;
+        border-radius: 0%;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+}
 
-  .basicBtn:hover {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
-  }
+@mixin mobileOnlyBtn {
+    .mobileOnlyBtn {
 
-  .basicBtn:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(10px);
-    transition: 100ms;
-  }
+        // Responsive Design Styles
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+// Dropdowns
+@mixin dropdownMenu {
+    .dropdownMenu {
+        .overlay {
+            @include flexCenterContainer(map-get($colors, "transparent"));
+            flex-direction: column;
+            gap: calc($base-gap);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            z-index: 99;
+
+            .menuOptions {
+                width: 100%;
+            }
+        }
+    }
 }

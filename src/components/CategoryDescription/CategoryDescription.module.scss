@@ -3,14 +3,23 @@
 @import '../../sass/breakpoints.scss';
 
 .categoryDescription {
-    // @include flexCenterContainer(map-get($colors, "transparent"));
-    // text-align: center;
-    // width: 100%;
+    text-align: center;
+    padding: calc($base-padding / 2);
 
+    .categoryTitle {
+        font-size: calc($base-font-size * 1.3);
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase
+    }
 
-    
+    p {
+        font-size: calc($base-font-size * 1.1);
+        font-style: italic;
+    }
+
     @include tablet {
-        background-color: red;
+        background-color: blue;
         position: -webkit-sticky;
         position: sticky;
         z-index: 10;

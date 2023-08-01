@@ -44,16 +44,54 @@ export const SortProducts = () => {
     return (
         <section ref={domNode} className={style.sortProducts}>
             {/* Toggle dropdown on button click */}
-            <button onClick={() => setShowSortOptions(!showSortOptions)}>Sort by...</button>
+            <button
+                className={style.dropdownBtn}
+                onClick={() => setShowSortOptions(!showSortOptions)}
+            >
+                Sort by...
+            </button>
 
             {showSortOptions
                 ?
-                <ul>
-                    <li onClick={() => onSort('incremental', 'title')}>Name(A-Z)</li>
-                    <li onClick={() => onSort('decremental', 'title')}>Name(Z-A)</li>
-                    <li onClick={() => onSort('decremental', 'price')}>Price(Highest)</li>
-                    <li onClick={() => onSort('incremental', 'price')}>Price(Lowest)</li>
-                </ul>
+                <div className={style.dropdownMenu}>
+                    <div className={style.overlay}>
+                        <ul className={style.menuOptions}>
+                            <li>
+                                <button
+                                    className={`${style.dropdownBtn}`}
+                                    onClick={() => onSort('incremental', 'title')}
+                                >
+                                    Name(A-Z)
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    className={`${style.dropdownBtn}`}
+                                    onClick={() => onSort('decremental', 'title')}
+                                >
+                                    Name(Z-A)
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    className={`${style.dropdownBtn}`}
+                                    onClick={() => onSort('decremental', 'price')}
+                                >
+                                    Price(Highest)
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    className={`${style.dropdownBtn}`}
+                                    onClick={() => onSort('incremental', 'price')}
+                                >
+                                    Price(Lowest)
+                                </button>
+                            </li>
+                        </ul>
+                        <button className={`${style.mobileOnlyBtn} ${style.dropdownBtn}`} onClick={() => setShowSortOptions(!showSortOptions)}> Ok </button>
+                    </div>
+                </div>
                 :
                 ""
             }

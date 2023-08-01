@@ -112,56 +112,77 @@ export const FilterProducts = () => {
 
     return (
         <section className={style.filter}>
-            <button onClick={() => setShowFilterOptions(!showFilterOptions)}>Fiter</button>
+            {/* Toggle dropdown on button click */}
+            <button
+                className={`${style.dropdownBtn} ${style.mobileOnlyBtn}`}
+                onClick={() => setShowFilterOptions(!showFilterOptions)}
+            >
+                Filter
+            </button>
 
             {showFilterOptions
                 ?
-                <div>
-                    <div>
-                        <p>{priceRange.value[0]} - {priceRange.value[1]}</p>
-                        <Slider
-                            // className="horizontal-slider"
-                            // thumbClassName="example-thumb"
-                            // trackClassName="example-track"
-                            // defaultValue={[0, 100]}
-                            // ariaLabel={['Lower thumb', 'Upper thumb']}
-                            // ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                            // renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                            // pearling
-                            // minDistance={10}
+                <div className={style.dropdownMenu}>
+                    <div className={style.overlay}>
+                        <div>
+                            <p>{priceRange.value[0]} - {priceRange.value[1]}</p>
+                            <Slider
+                                // className="horizontal-slider"
+                                // thumbClassName="example-thumb"
+                                // trackClassName="example-track"
+                                // defaultValue={[0, 100]}
+                                // ariaLabel={['Lower thumb', 'Upper thumb']}
+                                // ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                                // renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                                // pearling
+                                // minDistance={10}
 
-                            className={style.slider}
-                            thumbClassName={style.thumb}
-                            trackClassName={style.track}
-                            withTracks={true}
-                            onChange={(value) => setPriceRange((state) => ({ ...state, value }))}
-                            value={priceRange.value}
-                            min={priceRange.lowest}
-                            max={priceRange.highest}
-                            minDistance={10}
-                        />
+                                className={style.slider}
+                                thumbClassName={style.thumb}
+                                trackClassName={style.track}
+                                withTracks={true}
+                                onChange={(value) => setPriceRange((state) => ({ ...state, value }))}
+                                value={priceRange.value}
+                                min={priceRange.lowest}
+                                max={priceRange.highest}
+                                minDistance={10}
+                            />
+                        </div>
+
+                        <ul className={style.checkboxHolder}>
+                            {
+                                filterOptions.map((color) => {
+                                    return (
+                                        <li key={color}>
+                                            <label>
+                                                <input
+                                                    className={style.checkbox}
+                                                    onChange={filterHandler}
+                                                    type="checkbox"
+                                                    value={color}
+                                                />
+                                                {color}
+                                            </label>
+                                        </li>
+                                    );
+                                })
+                            }
+                        </ul>
+
+                        <button
+                            className={`${style.dropdownBtn}`}
+                            onClick={clearFilters}
+                        >
+                            Clear
+                        </button>
+
+                        <button
+                            className={`${style.mobileOnlyBtn} ${style.dropdownBtn}`}
+                            onClick={() => setShowFilterOptions(!showFilterOptions)}
+                        >
+                            Ok
+                        </button>
                     </div>
-
-                    <ul>
-                        {
-                            filterOptions.map((color) => {
-                                return (
-                                    <li key={color}>
-                                        <label>
-                                            <input
-                                                onChange={filterHandler}
-                                                type="checkbox"
-                                                value={color}
-                                            />
-                                            {color}
-                                        </label>
-                                    </li>
-                                );
-                            })
-                        }
-                    </ul>
-
-                    <button onClick={clearFilters}>Clear</button>
                 </div>
                 :
                 ""

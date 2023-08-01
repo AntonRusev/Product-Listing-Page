@@ -3,21 +3,24 @@
 @import '../../sass/breakpoints.scss';
 
 .filter {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // max-width: 60rem;
-    /* align-items: center; */
-    // width: 100%;
-    // width: 20%;
-    // height: 100%;
-    // padding-bottom: 7rem;
-    // background-color: red;
-    // position: -webkit-sticky;
-    // position: fixed;
-    // top: 7rem;
-    // left: 0;
-    // z-index: 10;
+    @include dropdownBtn;
+    @include dropdownMenu;
+    @include mobileOnlyBtn;
+
+
+    .checkboxHolder {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+        flex-direction: column;
+        align-items: flex-start;
+        gap: calc($base-gap);
+
+        .checkbox {
+            transform: scale(2.5);
+            margin: calc($base-margin / 3) calc($base-margin / 2);
+            font-size: calc($base-font-size * 3);
+        }
+    }
+
 
     @include tablet {
         height: 100%;

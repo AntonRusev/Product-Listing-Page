@@ -3,6 +3,10 @@
 @import '../../sass/breakpoints.scss';
 
 .sortProducts {
+    @include dropdownBtn;
+    @include dropdownMenu;
+    @include mobileOnlyBtn;
+
     @include tablet {
         background-color: red;
         position: -webkit-sticky;
