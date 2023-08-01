@@ -7,6 +7,7 @@ import { ProductCard } from "../ProductCard/ProductCard";
 import { ProductsOutOfAll } from "../ProductsOutOfAll/ProductsOutOfAll";
 
 import style from './ProductList.module.scss';
+import { Footer } from "../Footer/Footer";
 
 export const ProductList = () => {
     const [productsShown, setProductsShown] = useState({
@@ -69,31 +70,35 @@ export const ProductList = () => {
     };
 
     return (
-        <section className={style.productList}>
-            {!itemsToDisplay || itemsToDisplay.length === 0
-                ?
-                <p>There are no products to show.</p>
-                :
-                <div className={style.shownProducts}>
-                    <ProductsOutOfAll 
-                    currentCategory={currentCategory}
-                    itemsToDisplay={itemsToDisplay} 
-                    productsShown={productsShown}
-                    />
-                    <ul className={style.products}>
-                        {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
-                    </ul>
+        <>
+            <section className={style.productList}>
+                {!itemsToDisplay || itemsToDisplay.length === 0
+                    ?
+                    <p>There are no products to show.</p>
+                    :
+                    <div className={style.shownProducts}>
+                        <ProductsOutOfAll
+                            currentCategory={currentCategory}
+                            itemsToDisplay={itemsToDisplay}
+                            productsShown={productsShown}
+                        />
+                        <ul className={style.products}>
+                            {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
+                        </ul>
 
-                    {productsShown.toDisplay < itemsToDisplay.length && (
-                        <button
-                            className="mt-4"
-                            onClick={handleMoreProducts}
-                        >
-                            Load more
-                        </button>
-                    )}
-                </div>
-            }
-        </section>
+                        {productsShown.toDisplay < itemsToDisplay.length && (
+                            <button
+                                className="mt-4"
+                                onClick={handleMoreProducts}
+                            >
+                                Load more
+                            </button>
+                        )}
+                    </div>
+                }
+            </section>
+
+            <Footer />
+        </>
     );
 };
