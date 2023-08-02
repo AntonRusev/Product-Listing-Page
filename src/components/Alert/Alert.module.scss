@@ -1,26 +1,54 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+@import '../../sass/breakpoints.scss';
+
 .overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include flexCenterContainer(map-get($colors, "transparent"));
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    font-size: 24px;
+    font-size: calc($base-font-size);
+    -webkit-animation: fadein 1s ease-in alternate infinite;
+    -moz-animation: fadein 1s ease-in alternate infinite;
+    animation: fadein 1s ease-in alternate infinite;
     z-index: 100;
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 }
 
 .alert {
-    display: flex;
+    @include flexCenterContainer(map-get($colors, "transparent"));
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: #104373;
+    width: 80%;
     background-color: whitesmoke;
-    padding: 24px;
+    padding: calc($base-padding / 2);
     border: #104373 solid 6px;
     border-radius: 8px;
+    cursor: default;
+
+    i {
+        font-size: calc($base-font-size * 2);
+        margin-bottom: calc($base-margin);
+    }
+
+            // Responsive Design Styles
+            @include tablet {
+                max-width: 30%;
+            }
 }

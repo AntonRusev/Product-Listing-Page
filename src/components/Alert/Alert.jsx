@@ -14,11 +14,13 @@ export const Alert = ({
     }, []);
 
     return (
-        <section onClick={() => setCartAlert(false)} className={style.overlay}>
-            <div onClick={(e) => e.stopPropagation()} className={style.alert}>
-                <p>Product "{title}" for ${price} was added to your shopping cart!</p>
-
-                <button onClick={() => setCartAlert(false)}>Ok</button>
+        <section
+            onClick={() => setCartAlert(false)}
+            className={style.overlay}
+        >
+            <div className={style.alert}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                <p>"{title}" was added to your shopping cart!</p>
             </div>
         </section>
     );

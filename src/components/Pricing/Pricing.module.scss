@@ -1,0 +1,35 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.pricing {
+    .discountHolder {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+
+
+        .oldPrice {
+            @include flexCenterContainer(map-get($colors, "transparent"));
+            color: map-get($colors, "gray");
+            opacity: 0.6;
+            margin: 0 calc($base-margin / 5);
+
+            span {
+                text-decoration: line-through;
+            }
+        }
+
+        .discount {
+            font-style: italic;
+            color: map-get($colors, "light-green");
+            border-radius: 50%;
+            border: 3px solid map-get($colors, "light-green");
+            // padding: calc($base-padding / 5);
+        }
+    }
+
+    .price {
+        font-size: calc($base-font-size * 1.2);
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: white;
+    }
+}

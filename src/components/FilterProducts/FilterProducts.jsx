@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Slider from "react-slider";
 
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+
 import { ProductContext } from "../../context/ProductContext";
 
 import { priceRangeExtractor } from "../../utils/priceRangeExtractor";
@@ -18,7 +20,16 @@ export const FilterProducts = () => {
         value: [0, 100]
     });
 
+    const { width } = useWindowDimensions();
+
     const { categoryData, setItemsToDisplay } = useContext(ProductContext);
+
+    // Always show filters when screen is not mobile
+    useEffect(() => {
+        if (width > 720) {
+            setShowFilterOptions(true);
+        }
+    }, [width]);
 
     useEffect(() => {
         if (categoryData) {
@@ -123,9 +134,9 @@ export const FilterProducts = () => {
             {showFilterOptions
                 ?
                 <div className={style.dropdownMenu}>
+                    <h3 className={style.filtersTitle}>Filters:</h3>
                     <div className={style.overlay}>
-                        <div>
-                            <p>{priceRange.value[0]} - {priceRange.value[1]}</p>
+                        <div className={style.sliderHolder}>
                             <Slider
                                 // className="horizontal-slider"
                                 // thumbClassName="example-thumb"
@@ -147,6 +158,7 @@ export const FilterProducts = () => {
                                 max={priceRange.highest}
                                 minDistance={10}
                             />
+                            <p>${priceRange.value[0]} - ${priceRange.value[1]}</p>
                         </div>
 
                         <ul className={style.checkboxHolder}>

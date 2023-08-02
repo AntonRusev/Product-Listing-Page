@@ -6,7 +6,7 @@
 .card {
     @include flexCenterContainer(map-get($colors, "transparent"));
     flex-direction: column;
-
+    gap: calc($base-gap / 2);
     width: auto;
     max-width: 330px;
     border: 0.5px solid black;
@@ -23,22 +23,49 @@
     }
 
     .cardTitle {
-        font-size: calc($base-font-size * 1.2);
+        font-size: calc($base-font-size * 2);
+        font-weight: 200;
+        letter-spacing: 1.5px;
     }
 
-    .pricing {
+    .desc {
+        font-weight: 100;
+    }
+
+    .extraInfo {
         @include flexCenterContainer(map-get($colors, "transparent"));
-        gap: calc($base-gap);
+        width: 100%;
+        justify-content: space-between;
+
+        @include tablet {
+            justify-content: space-evenly;
+        }
     }
 
-        // Responsive Design Styles
-        @include tablet {
-            // width: 200px;
-            max-width: 35%;
-        }
+    .addToCartBtn {
+        width: 90%;
+        height: 5rem;
+        border-radius: 0%;
+        background-color: map-get($colors, "primary");
+        font-family: 'Georama', sans-serif;
+        font-size: calc($base-font-size);
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: calc($base-margin / 5);
+        border-color: map-get($colors, "secondary");
+        cursor: pointer;
 
-        @include desktop {
-            // width: 360px;
-            max-width: 26%;
+        i {
+            margin-right: calc($base-margin / 2);
         }
+    }
+
+    // Responsive Design Styles
+    @include tablet {
+        max-width: 35%;
+    }
+
+    @include desktop {
+        max-width: 26%;
+    }
 }

@@ -10,6 +10,7 @@
     max-height: 100vh;
     width: 95%;
     max-width: 1920px;
+    font-family: 'Georama', sans-serif;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,7 +43,7 @@
     // Responsive Design Styles
     @include tablet {
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(5, auto);
         gap: 6px;
         grid-template-areas:
             "filter desc desc desc desc desc desc sort"

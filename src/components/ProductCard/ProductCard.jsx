@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Alert } from "../Alert/Alert";
+import { Pricing } from "../Pricing/Pricing";
 import { Rating } from "../Rating/Rating";
 
 import style from './ProductCard.module.scss';
@@ -20,21 +21,23 @@ export const ProductCard = ({
     return (
         <li className={style.card}>
             <img className={style.image} src={image} alt="" />
-            <h6 className={style.cardTitle}>Title: {title}</h6>
-            <p className={style.desc}>Description: {description.substring(0, 100)}...</p>
-            <div className={style.ratings}>
-                <Rating rating={rating.rate} />
-                Average rating of {rating.rate} based on {rating.count} reviews.
-            </div>
-            <div className={style.pricing}>
-                {/* If there is a discount show these two */}
-                {oldPrice ? <p>Old Price: ${oldPrice}</p> : ''}
-                {oldPrice ? <p>Sale: -{discountPercentage}%</p> : ''}
-                <p>Price: ${price}</p>
+            <h6 className={style.cardTitle}>{title}</h6>
+            <p className={style.desc}>{description.substring(0, 70)}...</p>
+
+            <div className={style.extraInfo}>
+                <Rating rating={rating.rate} reviews={rating.count} />
+
+                <Pricing oldPrice={oldPrice} discountPercentage={discountPercentage} price={price} />
             </div>
 
-            {/* <p>Color: {color}</p> */}
-            <button onClick={() => setCartAlert(true)}>Add to cart</button>
+            <button
+                className={style.addToCartBtn}
+                onClick={() => setCartAlert(true)}
+            >
+                <i className="fa-solid fa-cart-shopping"></i>
+                ADD TO CART
+            </button>
+
             {cartAlert
                 ? <Alert title={title} price={price} setCartAlert={setCartAlert} />
                 : ''

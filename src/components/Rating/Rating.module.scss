@@ -1,0 +1,16 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+
+.ratings {
+    @include flexCenterContainer(map-get($colors, "transparent"));
+    flex-direction: column;
+    padding: calc($base-padding /4);
+    font-style: italic;
+
+    .fullstar,
+    .halfstar {
+        color: map-get($colors, "gold");
+        font-size: calc($base-font-size * 1.2);
+    }
+}

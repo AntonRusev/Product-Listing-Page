@@ -1,7 +1,8 @@
 import style from './Rating.module.scss';
 
 export const Rating = ({
-    rating
+    rating,
+    reviews
 }) => {
     let result = [];
 
@@ -25,14 +26,21 @@ export const Rating = ({
     };
 
     return (
-        <div>
-            {result.map((star, index) => {
-                if (star === 'fullstar') {
-                    return <i key={index} className="fa-solid fa-star"></i>
-                } else if (star === 'halfstar') {
-                    return <i key={index} className="fa-regular fa-star-half-stroke"></i>
-                };
-            })}
+        <div className={style.ratings}>
+            <div>
+                {result.length > 0
+                    ? result.map((star, index) => {
+                        if (star === 'fullstar') {
+                            return <span key={index} className={style.fullstar}><i className="fa-solid fa-star"></i></span>
+                        } else if (star === 'halfstar') {
+                            return <span key={index} className={style.halfstar}><i className="fa-regular fa-star-half-stroke"></i></span>
+                        };
+                    })
+                    : <p>Not rated yet.</p>
+                }
+            </div>
+
+            <span>{reviews} reviews</span>
         </div>
     );
 };

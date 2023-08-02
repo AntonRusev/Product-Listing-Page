@@ -8,6 +8,46 @@
     @include mobileOnlyBtn;
 
 
+    .filtersTitle {
+
+        // Responsive Design Styles
+        @include tablet {
+            @include flexCenterContainer(map-get($colors, "transparent"));
+            font-size: calc($base-font-size * 2);
+            padding-top: calc($base-padding * 4);
+        }
+    }
+
+    .sliderHolder {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+        flex-direction: column;
+        width: 100%;
+
+        // Slider element styling
+        .slider {
+            width: 90%;
+            height: 20px;
+            margin-bottom: calc($base-margin / 2);
+        }
+
+        // Slider element's "thumbs"
+        .thumb {
+            width: 12px;
+            height: 25px;
+            cursor: pointer;
+            background: map-get($colors, "blue");
+            border-radius: calc($base-border-radius / 5);
+        }
+
+        // Slider element's "track"
+        .track {
+            background-color: map-get($colors, "gray");
+            height: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
     .checkboxHolder {
         @include flexCenterContainer(map-get($colors, "transparent"));
         flex-direction: column;
@@ -18,39 +58,31 @@
             transform: scale(2.5);
             margin: calc($base-margin / 3) calc($base-margin / 2);
             font-size: calc($base-font-size * 3);
+            cursor: pointer;
+
+            // Responsive Design Styles
+            @include tablet {
+                transform: scale(1.5);
+                font-size: calc($base-font-size);
+                margin: calc($base-margin / 3) calc($base-margin / 3);
+            }
+        }
+
+        // Responsive Design Styles
+        @include tablet {
+            gap: calc($base-gap * 2);
         }
     }
 
-
+    // Responsive Design Styles
     @include tablet {
         height: 100%;
-        padding-bottom: 7rem;
+        gap: calc($base-gap);
         background-color: red;
         position: -webkit-sticky;
         position: sticky;
+        padding-top: calc($base-padding);
         left: 0;
         z-index: 10;
     }
-}
-
-.slider {
-    /* width: 50%; */
-    width: 10rem;
-    height: 25px;
-    background-color: red;
-}
-
-.thumb {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    background: yellow;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
-.track {
-    background-color: blue;
-    height: 10px;
-    /* width: 1%; */
 }

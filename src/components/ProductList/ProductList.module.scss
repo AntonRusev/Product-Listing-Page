@@ -6,7 +6,7 @@
     @include flexCenterContainer(map-get($colors, "transparent"));
     max-width: 1920px;
     min-width: 100%;
-    background-color: yellow;
+    background-color: purple;
 
     .shownProducts {
         width: 100%;
@@ -25,8 +25,12 @@
             }
         }
 
-        button {
+        .loadMoreBtn {
+            font-size: calc($base-font-size);
+            letter-spacing: 1px;
             margin: calc($base-margin) 0;
+            padding: calc($base-padding / 2) calc($base-padding * 2);
+            border-radius: 0;
         }
     }
 }

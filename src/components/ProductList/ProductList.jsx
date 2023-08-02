@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
@@ -83,12 +84,12 @@ export const ProductList = () => {
                             productsShown={productsShown}
                         />
                         <ul className={style.products}>
-                            {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={p.id} {...p} />)}
+                            {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={uuidv4()} {...p} />)}
                         </ul>
 
                         {productsShown.toDisplay < itemsToDisplay.length && (
                             <button
-                                className="mt-4"
+                                className={style.loadMoreBtn}
                                 onClick={handleMoreProducts}
                             >
                                 Load more
