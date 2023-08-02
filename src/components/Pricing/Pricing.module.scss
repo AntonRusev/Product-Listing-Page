@@ -8,7 +8,7 @@
 
         .oldPrice {
             @include flexCenterContainer(map-get($colors, "transparent"));
-            color: map-get($colors, "gray");
+            color: map-get($colors, "primary-dark");
             opacity: 0.6;
             margin: 0 calc($base-margin / 5);
 
@@ -30,6 +30,6 @@
         font-size: calc($base-font-size * 1.2);
         font-weight: 600;
         letter-spacing: 2px;
-        color: white;
+        color: map-get($colors, "black");
     }
 }

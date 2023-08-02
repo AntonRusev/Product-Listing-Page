@@ -1,6 +1,33 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+@import '../../sass/breakpoints.scss';
+
 .footer {
     width: 100%;
     height: 4rem;
-    background-color: aqua;
+    background-color: map-get($colors, "white");
     text-align: center;
+
+    .linksHolder {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+        flex-direction: column;
+        padding: calc($base-padding / 2);
+        gap: calc($base-gap);
+        font-size: calc($base-font-size * 1.2);
+        color: map-get($colors, "primary");
+        background-color: map-get($colors, "white");
+
+        a {
+            text-decoration: none;
+            color: map-get($colors, "primary-dark");
+        }
+
+
+        // Responsive Design Styles
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-around;
+            margin-left: calc($base-margin * 1.5);
+        }
+    }
 }

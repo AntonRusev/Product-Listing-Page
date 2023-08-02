@@ -13,7 +13,7 @@ export const CategoryDescription = () => {
 
     return (
         <section className={style.categoryDescription}>
-            <h3 className={style.categoryTitle}>{categoryName}</h3>
+            <h2 className={style.categoryTitle}>{categoryName}</h2>
             <p>{categoryDescription[currentCategory]}</p>
         </section>
     );

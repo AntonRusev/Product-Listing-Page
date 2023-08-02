@@ -1,5 +1,7 @@
 import { firstLetterToCapital } from "../../utils/firstLetterToCapital";
 
+import style from './ProductsOutOfAll.module.scss';
+
 export const ProductsOutOfAll = ({
     currentCategory,
     itemsToDisplay,
@@ -18,8 +20,8 @@ export const ProductsOutOfAll = ({
     }
 
     return (
-        <h4>
-            Currently showing {currentlyDisplayed} out of {allProducts} products from the {category} category.
+        <h4 className={style.title}>
+           Results: <span>{currentlyDisplayed}</span> out of <span>{allProducts}</span>
         </h4>
     );
 };

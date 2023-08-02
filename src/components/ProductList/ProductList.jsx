@@ -6,9 +6,9 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { ProductContext } from "../../context/ProductContext";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { ProductsOutOfAll } from "../ProductsOutOfAll/ProductsOutOfAll";
+import { Footer } from "../Footer/Footer";
 
 import style from './ProductList.module.scss';
-import { Footer } from "../Footer/Footer";
 
 export const ProductList = () => {
     const [productsShown, setProductsShown] = useState({

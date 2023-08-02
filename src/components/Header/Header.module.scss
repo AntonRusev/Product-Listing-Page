@@ -10,22 +10,16 @@
     left: 0;
     height: 7rem;
     width: 100%;
-    // max-width: 1920px;
     background-color: map-get($colors, "white");
-    background-size: cover;
-    background-repeat: no-repeat;
     font-size: calc($base-font-size * 2);
     color: map-get($colors, "white");
     z-index: 10;
-    background-color: gray;
 
     .centered {
         @include flexCenterContainer(map-get($colors, "transparent"));
         flex-direction: column;
         width: auto;
         padding-top: calc($base-padding);
-        // max-width: 1920px;
-        // height: 7rem;
 
         // Responsive Design Styles
         @include tablet {
@@ -37,11 +31,11 @@
         font-size: calc($base-font-size * 2.6);
         font-weight: bolder;
         letter-spacing: -5px;
-        -webkit-text-stroke: 1px #23430C;
-        text-shadow: -1px 1px 2px #23430C,
-            1px 1px 2px #23430C,
-            1px -1px 0 #23430C,
-            -1px -1px 0 #23430C;
+        -webkit-text-stroke: 1px map-get($colors, "primary-dark");
+        text-shadow: -1px 1px 2px map-get($colors, "primary-dark"),
+            1px 1px 2px map-get($colors, "primary-dark"),
+            1px -1px 0 map-get($colors, "primary-dark"),
+            -1px -1px 0 map-get($colors, "primary-dark");
 
         @include tablet {
             font-size: calc($base-font-size * 3);
@@ -57,24 +51,4 @@
         @include flexCenterContainer(map-get($colors, "transparent"));
         gap: calc($base-gap * 2);
     }
-
-
-    // Responsive Design Styles
-    @include tablet {
-        // height: 10rem;
-    }
-
-
-    // @media (max-width: 600px) {
-
-    //   /* Target only devices below 600px */
-    //   .header {
-    //     position: fixed;
-    //     z-index: 999;
-    //     /* So that it is not under the other elements */
-    //     background: #1c2454;
-    //     /* It was transparent */
-    //   }
-
-    // }
 }

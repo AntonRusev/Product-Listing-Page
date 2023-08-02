@@ -9,12 +9,13 @@
 
 
     .filtersTitle {
-
         // Responsive Design Styles
         @include tablet {
             @include flexCenterContainer(map-get($colors, "transparent"));
-            font-size: calc($base-font-size * 2);
-            padding-top: calc($base-padding * 4);
+            font-size: calc($base-font-size * 1.6);
+            font-weight: 600;
+            margin-top: -1rem;
+            letter-spacing: 1px
         }
     }
 
@@ -35,13 +36,13 @@
             width: 12px;
             height: 25px;
             cursor: pointer;
-            background: map-get($colors, "blue");
+            background: map-get($colors, "lightest");
             border-radius: calc($base-border-radius / 5);
         }
 
         // Slider element's "track"
         .track {
-            background-color: map-get($colors, "gray");
+            background-color: map-get($colors, "black");
             height: 5px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -57,6 +58,7 @@
         .checkbox {
             transform: scale(2.5);
             margin: calc($base-margin / 3) calc($base-margin / 2);
+            font-family: 'Georama', sans-serif;
             font-size: calc($base-font-size * 3);
             cursor: pointer;
 
@@ -78,7 +80,7 @@
     @include tablet {
         height: 100%;
         gap: calc($base-gap);
-        background-color: red;
+        background-color: map-get($colors, "white");
         position: -webkit-sticky;
         position: sticky;
         padding-top: calc($base-padding);

@@ -8,9 +8,22 @@
     @include mobileOnlyBtn;
 
     @include tablet {
-        background-color: red;
+        background-color: map-get($colors, "white");
         position: -webkit-sticky;
         position: sticky;
         z-index: 10;
+
+
+        .dropdownMenu {
+            .overlay {
+                margin-top: calc($base-margin * 1.4);
+                justify-content: center;
+            }
+
+            .dropdownBtn {
+                margin: 0;
+            }
+        }
+
     }
 }

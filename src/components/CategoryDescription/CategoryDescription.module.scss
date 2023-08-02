@@ -19,7 +19,7 @@
     }
 
     @include tablet {
-        background-color: blue;
+        background-color: map-get($colors, "primary-light");
         position: -webkit-sticky;
         position: sticky;
         z-index: 10;

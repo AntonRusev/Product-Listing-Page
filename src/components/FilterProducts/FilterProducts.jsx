@@ -123,6 +123,7 @@ export const FilterProducts = () => {
 
     return (
         <section className={style.filter}>
+            <h3 className={style.filtersTitle}>Filters</h3>
             {/* Toggle dropdown on button click */}
             <button
                 className={`${style.dropdownBtn} ${style.mobileOnlyBtn}`}
@@ -134,7 +135,6 @@ export const FilterProducts = () => {
             {showFilterOptions
                 ?
                 <div className={style.dropdownMenu}>
-                    <h3 className={style.filtersTitle}>Filters:</h3>
                     <div className={style.overlay}>
                         <div className={style.sliderHolder}>
                             <Slider

@@ -6,7 +6,7 @@
     @include flexCenterContainer(map-get($colors, "transparent"));
     max-width: 1920px;
     min-width: 100%;
-    background-color: purple;
+    background-color: map-get($colors, "white");
 
     .shownProducts {
         width: 100%;

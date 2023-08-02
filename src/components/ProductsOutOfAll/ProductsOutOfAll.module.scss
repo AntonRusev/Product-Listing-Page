@@ -1,0 +1,9 @@
+@import '../../sass/variables.scss';
+
+.title {
+    padding: calc($base-padding);
+
+    span {
+        font-weight: bold;
+    }
+}
