@@ -45,7 +45,7 @@ export const SortProducts = () => {
         <section ref={domNode} className={style.sortProducts}>
             {/* Toggle dropdown on button click */}
             <button
-                className={style.dropdownBtn}
+                className={`${style.dropdownBtn} ${style.toggleBtn}`}
                 onClick={() => setShowSortOptions(!showSortOptions)}
             >
                 Sort by...

@@ -20,6 +20,10 @@
         a {
             text-decoration: none;
             color: map-get($colors, "primary-dark");
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
 

@@ -7,21 +7,35 @@
     @include dropdownMenu;
     @include mobileOnlyBtn;
 
+
+    // Responsive Design Styles
     @include tablet {
         background-color: map-get($colors, "white");
         position: -webkit-sticky;
         position: sticky;
         z-index: 10;
 
+        .toggleBtn {
+            height: 4.5rem;
+            margin: 0;
+        }
+
 
         .dropdownMenu {
+            margin-left: -1px;
             .overlay {
-                margin-top: calc($base-margin * 1.4);
+                margin-top: calc($base-margin / 1.2);
                 justify-content: center;
+                left: inherit;
+
+                .menuOptions {
+                    margin-top: calc($base-margin / 4);
+                }
             }
 
             .dropdownBtn {
                 margin: 0;
+                padding: 0;
             }
         }
 

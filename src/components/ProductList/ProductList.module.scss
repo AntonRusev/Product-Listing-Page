@@ -28,9 +28,16 @@
         .loadMoreBtn {
             font-size: calc($base-font-size);
             letter-spacing: 1px;
+            background-color: map-get($colors, "lightest");
             margin: calc($base-margin) 0;
             padding: calc($base-padding / 2) calc($base-padding * 2);
             border-radius: 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: map-get($colors, "primary");
+                color: map-get($colors, "white");
+            }
         }
     }
 }

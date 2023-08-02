@@ -9,6 +9,8 @@
 
 
     .filtersTitle {
+        display: none;
+
         // Responsive Design Styles
         @include tablet {
             @include flexCenterContainer(map-get($colors, "transparent"));
@@ -16,6 +18,16 @@
             font-weight: 600;
             margin-top: -1rem;
             letter-spacing: 1px
+        }
+    }
+
+    .dropDownMenu {
+        #idoverlay {
+
+            // Responsive Design Styles
+            @include tablet {
+                left: 1rem
+            }
         }
     }
 
@@ -42,10 +54,15 @@
 
         // Slider element's "track"
         .track {
-            background-color: map-get($colors, "black");
+            background-color: map-get($colors, "white");
             height: 5px;
             margin-top: 10px;
             margin-bottom: 10px;
+
+            // Responsive Design Styles
+            @include tablet {
+                background-color: map-get($colors, "black");
+            }
         }
     }
 

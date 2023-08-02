@@ -33,16 +33,22 @@
         height: 2rem;
         margin: calc($base-margin / 10) 0;
         border-radius: 0%;
+        background-color: map-get($colors, "lightest");
+        font-family: 'Georama', sans-serif;
         letter-spacing: 1.5px;
         font-size: calc($base-font-size * 1.2);
         font-weight: 600;
         cursor: pointer;
+
+        &:hover,
+        &:active {
+            background-color: map-get($colors, "primary");
+        }
     }
 }
 
 @mixin mobileOnlyBtn {
     .mobileOnlyBtn {
-
         // Responsive Design Styles
         @include tablet {
             display: none;
@@ -101,7 +107,7 @@
             gap: calc($base-gap / 2);
             position: fixed;
             background-color: rgba(0, 0, 0, 0.8);
-            color: map-get($colors, "black");
+            color: map-get($colors, "white");
             width: 100%;
             height: 100%;
             top: 0;
@@ -138,10 +144,12 @@
                 justify-content: flex-start;
                 width: 100%;
                 height: 100%;
-                top: 8rem;
-                bottom: -8rem;
+                top: inherit;
                 left: inherit;
+                left: calc($base-margin / 4);
+                margin-top: 10rem;
                 gap: calc($base-gap * 2);
+                color: map-get($colors, "black");
                 background-color: map-get($colors, "transparent");
             }
         }

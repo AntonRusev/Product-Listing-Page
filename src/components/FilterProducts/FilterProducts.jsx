@@ -135,7 +135,7 @@ export const FilterProducts = () => {
             {showFilterOptions
                 ?
                 <div className={style.dropdownMenu}>
-                    <div className={style.overlay}>
+                    <div className={style.overlay} id={style.idoverlay}>
                         <div className={style.sliderHolder}>
                             <Slider
                                 // className="horizontal-slider"
@@ -156,7 +156,7 @@ export const FilterProducts = () => {
                                 value={priceRange.value}
                                 min={priceRange.lowest}
                                 max={priceRange.highest}
-                                minDistance={10}
+                                minDistance={1}
                             />
                             <p>${priceRange.value[0]} - ${priceRange.value[1]}</p>
                         </div>

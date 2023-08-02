@@ -3,23 +3,26 @@
 @import '../../sass/breakpoints.scss';
 
 .categoryDescription {
+    background-color: map-get($colors, "primary-dark");
     text-align: center;
+    color: map-get($colors, "white");
     padding: calc($base-padding / 2);
 
     .categoryTitle {
-        font-size: calc($base-font-size * 1.3);
+        font-size: calc($base-font-size * 1.4);
         font-weight: bold;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         text-transform: uppercase;
     }
 
     p {
         font-size: calc($base-font-size * 1.1);
         font-style: italic;
+        font-weight: 200;
     }
 
     @include tablet {
-        background-color: map-get($colors, "primary-light");
+
         position: -webkit-sticky;
         position: sticky;
         z-index: 10;
