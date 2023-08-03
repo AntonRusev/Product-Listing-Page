@@ -75,7 +75,7 @@ export const ProductList = () => {
             <section className={style.productList}>
                 {!itemsToDisplay || itemsToDisplay.length === 0
                     ?
-                    <p>There are no products to show.</p>
+                    <p className={style.emptyList}>There are no products to show.</p>
                     :
                     <div className={style.shownProducts}>
                         {/* Showing how many items are shown out of all the items in the category */}

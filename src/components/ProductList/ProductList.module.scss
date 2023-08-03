@@ -7,6 +7,11 @@
     max-width: 1920px;
     min-width: 100%;
 
+    .emptyList {
+        @include flexCenterContainer(map-get($colors, "transparent"));
+        height: 70vh;
+    }
+
     .shownProducts {
         width: 100%;
         text-align: center;

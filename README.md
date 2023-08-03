@@ -6,4 +6,4 @@ The products data used by the application is hard-coded and locally stored, mean
 
 ## Accessing the application
 
-Coming soon. 
+https://ar-product-listing-page.web.app/
