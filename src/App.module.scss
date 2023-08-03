@@ -12,6 +12,7 @@
     max-width: 1920px;
     font-family: 'Georama', sans-serif;
 
+    // Grid
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, auto);
@@ -52,6 +53,7 @@
             "filter filter list list list list list list list"
             "filter filter list list list list list list list";
     }
+
     @include desktop {
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(5, auto);

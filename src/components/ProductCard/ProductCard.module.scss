@@ -15,7 +15,8 @@
     overflow: hidden;
     position: relative;
     aspect-ratio: 1/1.5;
-    color: black;
+    color: map-get($colors, "black");
+    ;
 
     .image {
         width: 100%;
@@ -48,15 +49,15 @@
     .addToCartBtn {
         width: 90%;
         height: 5rem;
+        margin-bottom: calc($base-margin / 5);
         border-radius: 0%;
+        border-color: map-get($colors, "primary-dark");
         background-color: map-get($colors, "primary-dark");
         color: map-get($colors, "white");
         font-family: 'Georama', sans-serif;
         font-size: calc($base-font-size);
         font-weight: 600;
         letter-spacing: 1px;
-        margin-bottom: calc($base-margin / 5);
-        border-color: map-get($colors, "primary-dark");
         cursor: pointer;
 
         i {

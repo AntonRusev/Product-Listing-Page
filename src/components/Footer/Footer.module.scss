@@ -9,13 +9,12 @@
     text-align: center;
 
     .linksHolder {
-        @include flexCenterContainer(map-get($colors, "transparent"));
+        @include flexCenterContainer(map-get($colors, "white"));
         flex-direction: column;
         padding: calc($base-padding / 2);
         gap: calc($base-gap);
         font-size: calc($base-font-size * 1.2);
         color: map-get($colors, "primary");
-        background-color: map-get($colors, "white");
 
         a {
             text-decoration: none;
@@ -25,7 +24,6 @@
                 text-decoration: underline;
             }
         }
-
 
         // Responsive Design Styles
         @include tablet {

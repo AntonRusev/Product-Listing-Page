@@ -4,9 +4,9 @@ import style from "./Alert.module.scss";
 
 export const Alert = ({
     title,
-    price,
     setCartAlert
 }) => {
+    // Closing the message after 2 seconds
     useEffect(() => {
         setTimeout(() => {
             setCartAlert(false);

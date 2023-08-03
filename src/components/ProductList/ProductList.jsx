@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-
 import { ProductContext } from "../../context/ProductContext";
+
 import { ProductCard } from "../ProductCard/ProductCard";
 import { ProductsOutOfAll } from "../ProductsOutOfAll/ProductsOutOfAll";
 import { Footer } from "../Footer/Footer";
@@ -78,11 +78,13 @@ export const ProductList = () => {
                     <p>There are no products to show.</p>
                     :
                     <div className={style.shownProducts}>
+                        {/* Showing how many items are shown out of all the items in the category */}
                         <ProductsOutOfAll
                             currentCategory={currentCategory}
                             itemsToDisplay={itemsToDisplay}
                             productsShown={productsShown}
                         />
+                        {/* Showing the required number of products */}
                         <ul className={style.products}>
                             {itemsToDisplay.slice(0, productsShown.toDisplay)?.map((p) => <ProductCard key={uuidv4()} {...p} />)}
                         </ul>

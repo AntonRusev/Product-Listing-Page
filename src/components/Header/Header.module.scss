@@ -2,7 +2,7 @@
 @import '../../sass/mixins.scss';
 
 .header {
-    @include flexCenterContainer(map-get($colors, "transparent"));
+    @include flexCenterContainer(map-get($colors, "white"));
     @include categoryNavButton;
     position: -webkit-sticky;
     position: fixed;
@@ -10,7 +10,6 @@
     left: 0;
     height: 7rem;
     width: 100%;
-    background-color: map-get($colors, "white");
     font-size: calc($base-font-size * 2);
     color: map-get($colors, "white");
     z-index: 10;

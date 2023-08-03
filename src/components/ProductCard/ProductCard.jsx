@@ -13,7 +13,6 @@ export const ProductCard = ({
     price,
     discountPercentage,
     rating,
-    color,
     oldPrice
 }) => {
     const [cartAlert, setCartAlert] = useState(false);
@@ -21,8 +20,14 @@ export const ProductCard = ({
     return (
         <li className={style.card}>
             <img className={style.image} src={image} alt="" />
-            <h6 className={style.cardTitle}>{title}</h6>
-            <p className={style.desc}>{description.substring(0, 70)}...</p>
+
+            <h6 className={style.cardTitle}>
+                {title}
+            </h6>
+
+            <p className={style.desc}>
+                {description.substring(0, 70)}...
+            </p>
 
             <div className={style.extraInfo}>
                 <Rating rating={rating.rate} reviews={rating.count} />
@@ -38,6 +43,7 @@ export const ProductCard = ({
                 ADD TO CART
             </button>
 
+            {/* Showing alert that the item was added to cart */}
             {cartAlert
                 ? <Alert title={title} price={price} setCartAlert={setCartAlert} />
                 : ''

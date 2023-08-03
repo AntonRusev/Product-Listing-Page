@@ -2,6 +2,7 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/breakpoints.scss';
 
+// Putting the alert on the whole screen in front of everything else
 .overlay {
     @include flexCenterContainer(map-get($colors, "transparent"));
     background-color: rgba(0, 0, 0, 0.3);
@@ -31,15 +32,15 @@
     }
 }
 
+// The massage
 .alert {
-    @include flexCenterContainer(map-get($colors, "transparent"));
+    @include flexCenterContainer(map-get($colors, "white"));
     flex-direction: column;
-    color: #104373;
+    color: map-get($colors, "blue");
     width: 80%;
-    background-color: whitesmoke;
     padding: calc($base-padding / 2);
-    border: #104373 solid 6px;
-    border-radius: 8px;
+    border: map-get($colors, "blue") solid calc($base-border-thickness * 6);
+    border-radius: calc($base-border-radius / 3);
     cursor: default;
 
     i {

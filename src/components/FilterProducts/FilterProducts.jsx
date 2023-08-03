@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Slider from "react-slider";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-
 import { ProductContext } from "../../context/ProductContext";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 import { priceRangeExtractor } from "../../utils/priceRangeExtractor";
 
@@ -28,7 +27,7 @@ export const FilterProducts = () => {
     useEffect(() => {
         if (width > 720) {
             setShowFilterOptions(true);
-        }
+        };
     }, [width]);
 
     useEffect(() => {
@@ -42,10 +41,12 @@ export const FilterProducts = () => {
         };
     }, [categoryData]);
 
+    // Display the products after filtering
     useEffect(() => {
         setItemsToDisplay(filteredData);
     }, [filteredData]);
 
+    // Filtering the products of the current category
     useEffect(() => {
         setFilteredData([]);
 
@@ -124,7 +125,7 @@ export const FilterProducts = () => {
     return (
         <section className={style.filter}>
             <h3 className={style.filtersTitle}>Filters</h3>
-            {/* Toggle dropdown on button click */}
+            {/* Toggle dropdown on button click (Only active on mobile screen) */}
             <button
                 className={`${style.dropdownBtn} ${style.mobileOnlyBtn}`}
                 onClick={() => setShowFilterOptions(!showFilterOptions)}
@@ -135,19 +136,9 @@ export const FilterProducts = () => {
             {showFilterOptions
                 ?
                 <div className={style.dropdownMenu}>
-                    <div className={style.overlay} id={style.idoverlay}>
+                    <div className={style.overlay}>
                         <div className={style.sliderHolder}>
                             <Slider
-                                // className="horizontal-slider"
-                                // thumbClassName="example-thumb"
-                                // trackClassName="example-track"
-                                // defaultValue={[0, 100]}
-                                // ariaLabel={['Lower thumb', 'Upper thumb']}
-                                // ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                                // renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                                // pearling
-                                // minDistance={10}
-
                                 className={style.slider}
                                 thumbClassName={style.thumb}
                                 trackClassName={style.track}
@@ -181,6 +172,7 @@ export const FilterProducts = () => {
                             }
                         </ul>
 
+                        {/* Clearing all active filters */}
                         <button
                             className={`${style.dropdownBtn}`}
                             onClick={clearFilters}
@@ -188,6 +180,7 @@ export const FilterProducts = () => {
                             Clear
                         </button>
 
+                        {/* Hiding the filter options on mobile screen */}
                         <button
                             className={`${style.mobileOnlyBtn} ${style.dropdownBtn}`}
                             onClick={() => setShowFilterOptions(!showFilterOptions)}
@@ -199,7 +192,6 @@ export const FilterProducts = () => {
                 :
                 ""
             }
-
         </section>
     );
 };

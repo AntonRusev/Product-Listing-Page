@@ -10,6 +10,7 @@ export const SortProducts = () => {
 
     const { itemsToDisplay, setItemsToDisplay } = useContext(ProductContext);
 
+    // On clicking a sort button
     const onSort = (order, sortBy) => {
         let sortedProducts;
 
@@ -89,13 +90,14 @@ export const SortProducts = () => {
                                 </button>
                             </li>
                         </ul>
+
+                        {/* Closing dropdown menu (Only active on mobile screen) */}
                         <button className={`${style.mobileOnlyBtn} ${style.dropdownBtn}`} onClick={() => setShowSortOptions(!showSortOptions)}> Ok </button>
                     </div>
                 </div>
                 :
                 ""
             }
-
         </section>
     );
 };

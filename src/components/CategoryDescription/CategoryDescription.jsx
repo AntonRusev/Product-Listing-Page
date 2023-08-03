@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { ProductContext } from '../../context/ProductContext';
-import { categoryDescription } from '../../assets/data'
+import { categoryDescription } from '../../assets/data';
 import { firstLetterToCapital } from '../../utils/firstLetterToCapital';
 
 import style from './CategoryDescription.module.scss';

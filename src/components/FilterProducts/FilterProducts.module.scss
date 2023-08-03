@@ -21,16 +21,6 @@
         }
     }
 
-    .dropDownMenu {
-        #idoverlay {
-
-            // Responsive Design Styles
-            @include tablet {
-                left: 1rem
-            }
-        }
-    }
-
     .sliderHolder {
         @include flexCenterContainer(map-get($colors, "transparent"));
         flex-direction: column;

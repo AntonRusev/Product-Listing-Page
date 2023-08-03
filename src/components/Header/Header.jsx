@@ -18,9 +18,9 @@ export const Header = () => {
                             ? <p>...</p>
                             : categories.map((category) =>
                                 <li key={category}>
-                                    <button 
-                                    onClick={() => onCategoryChange(category)}
-                                    className={style.categoryNavButton}
+                                    <button
+                                        onClick={() => onCategoryChange(category)}
+                                        className={style.categoryNavButton}
                                     >
                                         {category}
                                     </button>

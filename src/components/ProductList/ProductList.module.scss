@@ -3,10 +3,9 @@
 @import '../../sass/breakpoints.scss';
 
 .productList {
-    @include flexCenterContainer(map-get($colors, "transparent"));
+    @include flexCenterContainer(map-get($colors, "white"));
     max-width: 1920px;
     min-width: 100%;
-    background-color: map-get($colors, "white");
 
     .shownProducts {
         width: 100%;

@@ -1,4 +1,6 @@
 export const priceRangeExtractor = (data) => {
+
+    // Extracting the lowest and highest prices in the current category
     let lowest = 0;
     let highest = 0;
 

@@ -7,7 +7,6 @@
     @include dropdownMenu;
     @include mobileOnlyBtn;
 
-
     // Responsive Design Styles
     @include tablet {
         background-color: map-get($colors, "white");
@@ -20,9 +19,9 @@
             margin: 0;
         }
 
-
         .dropdownMenu {
             margin-left: -1px;
+
             .overlay {
                 margin-top: calc($base-margin / 1.2);
                 justify-content: center;
@@ -38,6 +37,5 @@
                 padding: 0;
             }
         }
-
     }
 }
